@@ -181,7 +181,7 @@ if __name__ == '__main__':
     # First parse command line arguments and figure out which
     # function we want to test
     if len(sys.argv) <= 1:
-        fun = factorize1
+        fun = factorize2
     else:
         fun_to_call_string = sys.argv[1]
         assert fun_to_call_string in globals(), ('You did not implement '+fun_to_call_string)
@@ -189,7 +189,9 @@ if __name__ == '__main__':
         fun = globals_copy.get(fun_to_call_string)
     # Open the file with list of numbers
     f = open('composite_list.txt', 'r')
-    print_file = open('digit_list.txt', 'w')
+    # print_file = open('digit_list.txt', 'w')
+    fun_file = fun.__name__ + '.txt'
+    print_file = open(fun_file, 'w')
     # test each number
     digits = {}
     # time = []
