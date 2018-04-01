@@ -356,6 +356,16 @@ if __name__ == '__main__':
             print('Factorization failed for: ', n)
             sys.exit(1)
         # if time elapsed is greater than 5 - print and exit
+        if time_elapsed > 15:
+            f.close()
+            print('digits', digits);
+            for length, seconds in digits.items():
+                print('length', length)
+                print('seconds', seconds)
+
+                log_file.write("%s %f\n" % (length, seconds))
+
+            log_file.close()
     f.close()
     print('digits', digits);
     for length, seconds in digits.items():
