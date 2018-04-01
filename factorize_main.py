@@ -192,22 +192,22 @@ def check_for_primality_descending_eliminate_options_simple_filter(start, n):
 
 # ---------------------
 
-
-def factorize2(n):
-    knownPrimes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139]
-    if n in knownPrimes:
-        return n
-    prime__factorial_found = check_primality_in_known_set(n, knownPrimes)
-    if type(prime__factorial_found) is int and prime__factorial_found != n:
-        return prime_found
-        prime__factorial_found = brute_f_check_for_prime_endpoint_sqrt_num(141, n)
-    if type(prime__factorial_found) is int and prime__factorial_found != n:
-        return prime__factorial_found
-    print('number is determined to be prime')
-    return -1
+#
+# def factorize1(n):
+#     knownPrimes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139]
+#     if n in knownPrimes:
+#         return n
+#     prime__factorial_found = check_primality_in_known_set(n, knownPrimes)
+#     if type(prime__factorial_found) is int and prime__factorial_found != n:
+#         return prime_found
+#         prime__factorial_found = brute_f_check_for_prime_endpoint_sqrt_num(141, n)
+#     if type(prime__factorial_found) is int and prime__factorial_found != n:
+#         return prime__factorial_found
+#     print('number is determined to be prime')
+#     return -1
 # ...
 #
-def factorize3(n):
+def factorize2(n):
     knownPrimes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139]
 
     if n in knownPrimes:
@@ -224,7 +224,7 @@ def factorize3(n):
 # ...
 
 
-def factorize5(n):
+def factorize3(n):
     # also remove multiples of primes from set.
 
     knownPrimes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101,
@@ -245,7 +245,7 @@ def factorize5(n):
 
     return -1
 
-def factorize6(n):
+def factorize4(n):
 
     knownPrimes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101,
                    103, 107, 109, 113, 127, 131, 137, 139];
@@ -265,7 +265,7 @@ def factorize6(n):
 
     return -1
 
-def factorize7(n):
+def factorize5(n):
 
     knownPrimes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101,
                    103, 107, 109, 113, 127, 131, 137, 139];
@@ -285,7 +285,7 @@ def factorize7(n):
 
     return -1
 
-def factorize8(n):
+def factorize6(n):
     # also remove multiples of primes from set.
 
     knownPrimes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101,
@@ -307,7 +307,6 @@ def factorize8(n):
     return -1
 
 
-factorize8(2771188489)
 #prime_found in a lot of places I need to replace with prime__factorial_found
 # ...
 
@@ -356,7 +355,7 @@ if __name__ == '__main__':
             print('Factorization failed for: ', n)
             sys.exit(1)
         # if time elapsed is greater than 5 - print and exit
-        if time_elapsed > 15:
+        if (n == 3412403956823773):
             f.close()
             print('digits', digits);
             for length, seconds in digits.items():
