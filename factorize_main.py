@@ -324,7 +324,7 @@ if __name__ == '__main__':
     # First parse command line arguments and figure out which
     # function we want to test
     if len(sys.argv) <= 1:
-        fun = factorize3
+        fun = factorize
     else:
         fun_to_call_string = sys.argv[1]
         assert fun_to_call_string in globals(), ('You did not implement '+fun_to_call_string)
