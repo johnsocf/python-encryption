@@ -63,14 +63,14 @@ def factorize(n):
 # Below are additional helper functions that I (Cat) have added to make my code more modular:
 
 def brute_f_check_for_prime_endpoint_sqrt_num(start, n):
-    end_range = int(n ** (1 / 2))
+    end_range = int(math.floor(math.sqrt(n)))
     for i in range(start, end_range):
         if n % i == 0:
             return
     return n
 
 def check_for_primality_descending(start, n):
-    end_range = int(n ** (1 / 2))
+    end_range = int(math.floor(math.sqrt(n)))
     for i in range(start, end_range, -1):
         if n % i == 0:
             return
@@ -86,6 +86,62 @@ def check_for_primality_ascending_eliminate_options(start, n, common_list):
                  return
     return n
 
+def check_for_primality_ascending_eliminate_options_filter(start, n):
+    end_range = int(math.floor(math.sqrt(n)))
+    i = start
+    pattern_set_to_odds = False
+    # if number is a perfect square it is composite
+    if (end_range**2 == n):
+        return end_range
+    while i < end_range + 1:
+
+        if n % i == 0:
+            # print('brute force prime factor is', i)
+            return i
+        else:
+            # capture known multiples of primes, which would make this composite
+            if (not pattern_set_to_odds):
+                if i % 2 == 0:
+                    # print('even')
+                    pattern_set_to_odds = True
+                    i = i + 1
+            if (i + 1) % 3 == 0 or (i + 1) % 5 == 0 or (i + 1) % 7 == 0 or (i + 1) % 11 == 0 or (i + 1) % 13 == 0:
+                i = i + 4
+            i = i + 2
+    return
+
+def check_for_primality_descending_eliminate_options_filter(start, n):
+    end_range = int(math.floor(math.sqrt(n))) + 1
+    i = start
+    # print('here too')
+    # print('i', i)
+    # print('end range', int(end_range))
+    pattern_set_to_odds = False
+    # if number is a perfect square it is composite
+    if (end_range**2 == n):
+        return end_range
+    while end_range > i:
+        # print('i in range', i)
+        # capture known multiples of primes, which would make this composite
+        if n % end_range == 0:
+            # print('brute force prime factor is', i)
+            return i
+        else:
+            if (not pattern_set_to_odds):
+                if end_range % 2 == 0:
+                    # print('even')
+                    pattern_set_to_odds = True
+                    end_range = end_range + 1
+            if (end_range - 1) % 3 == 0 or (end_range - 1) % 5 == 0 or (end_range - 1) % 7 == 0 or (end_range - 1) % 11 == 0 or (end_range - 1) % 13 == 0:
+                end_range = end_range - 4
+            end_range = end_range - 2
+    return
+
+def test_for_prime_brute(i, n):
+    if n % i == 0:
+        return
+    return i
+
 def minimize_list(i):
     for j in common_list:
         if i % j == 0:
@@ -94,7 +150,7 @@ def minimize_list(i):
         return j
 
 def check_for_primality_descending_and_some(start, n, prime_factorial_set):
-    end_range = int(n ** (1 / 2))
+    end_range = int(math.floor(math.sqrt(n)))
     num_list = list(filter(lambda x: x if x not in prime_factorial_set else None, range(start, end_range, -1)))
     for i in num_list:
         if n % i == 0:
@@ -102,7 +158,7 @@ def check_for_primality_descending_and_some(start, n, prime_factorial_set):
     return n
 
 def check_for_primality_descending_only_non_factors(start, n, knownPrimes):
-    end_range = int(n ** (1 / 2));
+    end_range = int(math.floor(math.sqrt(n)))
     for i in range(start, end_range, -1):
 
         if n % i == 0:
@@ -110,7 +166,7 @@ def check_for_primality_descending_only_non_factors(start, n, knownPrimes):
     return n
 
 def check_for_primality_descending_only_non_factors(start, n, knownPrimes):
-    end_range = int(n ** (1 / 2));
+    end_range = int(math.floor(math.sqrt(n)))
     #list_without_prime_factors = filter( lambda x: ,range(start, end_range, -1));
     for i in range(start, end_range, -1):
 
@@ -186,9 +242,6 @@ def get_common_prime_list():
             common_primes.append(line.rstrip('\n'))
     return common_primes
 
- # prime_found = check_primality_in_known_set_and_some(n, knownPrimes)
-    # print('prime found', prime_found)
-    # print('prime found', prime_found)
 
 # ---------------------
 
@@ -255,12 +308,36 @@ def factorize4(n):
         return n
     prime_found = check_for_primality_ascending_eliminate_options(141, n, knownPrimes)
     if type(prime_found) is int and prime_found != n:
-        return prime_found + 'PRIME '
+        return prime_found
     print('number is determined to be prime')
 
     return -1
+
+def factorize5(n):
+    # also remove multiples of primes from set.
+
+    knownPrimes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101,
+                   103, 107, 109, 113, 127, 131, 137, 139];
+    if n in knownPrimes:
+        return n
+
+    prime_found = check_primality_in_known_set(n, knownPrimes)
+    if type(prime_found) is int and prime_found != n:
+        print('prime found', prime_found)
+        return prime_found
+
+    prime__factorial_found = check_for_primality_ascending_eliminate_options_filter(140, n)
+    #print('prime factor found', prime__factorial_found)
+    if type(prime__factorial_found) is int and prime__factorial_found != n:
+        return prime__factorial_found
+    print('number is determined to be prime')
+
+    return -1
+
+factorize5(2665827481)
+#prime_found in a lot of places I need to replace with prime__factorial_found
 # ...
-factorize4(191);
+
 
 # ...
 
@@ -274,7 +351,7 @@ if __name__ == '__main__':
     # First parse command line arguments and figure out which
     # function we want to test
     if len(sys.argv) <= 1:
-        fun = factorize
+        fun = factorize5
     else:
         fun_to_call_string = sys.argv[1]
         assert fun_to_call_string in globals(), ('You did not implement '+fun_to_call_string)
