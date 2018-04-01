@@ -36,6 +36,9 @@ from time import clock as time_clock
 
 # -------------------------------------------
 import math
+# Math is being imported to take the square root of n
+# to set a largest possible endpoint to a prime
+#factor of n
 
 
 # This is the brute force algorithm.
@@ -53,67 +56,45 @@ def factorize(n):
 # Please write a brief comment before each function to describe
 # the improvements you are trying out.
 
-def is_prime(n):
-    for i in range(2, n):
-        if n % i == 0:
-            return
-    return n
 
-def custom_is_prime(start, n):
+# ------------------
+
+# Below are additional helper functions that I (Cat) have added to make my code more modular:
+
+def brute_f_check_for_prime_endpoint_sqrt_num(start, n):
     end_range = int(n ** (1 / 2))
     for i in range(start, end_range):
         if n % i == 0:
             return
     return n
 
+def check_for_primality_descending(start, n):
+    end_range = int(n ** (1 / 2))
+    for i in range(start, end_range, -1):
+        if n % i == 0:
+            return
+    return n
+
+
+def check_primality_in_known_set(n, prime_set_basic):
+    for i in range(0, len(prime_set_basic)):
+        print('i in prime set', prime_set_basic[i])
+        if n % prime_set_basic[i] == 0:
+            return prime_set_basic[i]
+    else:
+        return 'now checking remaining set'
 
 def find_primes(start, end):
     prime_list = list(range(start, end))
     return list(filter(is_prime, prime_list))
 
-# def get_next_primes(start, end):
-#     return find_primes(start, end)
-#
+def is_prime(n):
+    for i in range(2, n):
+        if n % i == 0:
+            return
+    return n
 
-def checkin_for_primes(n, prime_set_basic):
-    end_range = int(n**(1/2))
-    for i in range(0, len(prime_set_basic)):
-        # print('i in prime set', prime_set_basic[i])
-        if n % prime_set_basic[i] == 0:
-            return prime_set_basic[i]
-    else:
-        return 'prob prime'
-
-def factorizeE(n):
-    prime_set_basic1 = [2, 3, 5, 7, 11, 13, 17, 19]
-    prime_set_basic1a = [23, 29, 31, 37, 41, 43, 47, 53, 59, 61]
-    prime_set_basic2 = [67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139]
-    prime_set_is = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139]
-
-    first_set_half = n // 2
-    prime_set_basic_first_half = find_primes(2, first_set_half)
-    print('prime set basic', prime_set_basic_first_half)
-    prime_found = checkin_for_primes(n, prime_set_basic_first_half)
-    if (type(prime_found) is int): return prime_found
-    else:
-        prime_set_basic_second_half = find_primes(first_set_half + 1, n)
-        print('prime set basic', prime_set_basic_second_half)
-        prime_found = checkin_for_primes(n, prime_set_basic_second_half)
-    if (type(prime_found) is int): return prime_found
-    #
-    # prime_found = custom_is_prime(139, n)
-    # if (type(prime_found) is int):
-    #     return prime_found
-    else:
-        return 'prob prime'
-    # print('prime found', prime_found)
-    # print('is digit', type(prime_found) is int)
-    # return
-
-        # prime_set = find_primes(first_set_half)
-        # print('prime set 1', prime_set)
-        # prime_set_basic = [2, 3, 5, 7, 11, 13, 17, 19]
-
+# ---------------------
 
 def factorize1(n):
     prime_set_basic1 = [2, 3, 5, 7, 11, 13, 17, 19]
@@ -123,44 +104,40 @@ def factorize1(n):
 
 
     for i in range(0, len(knownPrimes)):
-        prime_found = checkin_for_primes(n, knownPrimes[i])
+        prime_found = check_primality_in_known_set(n, knownPrimes[i])
         if (type(prime_found) is int and prime_found != n):
             return prime_found
-    # checkin for primes on both to capture leftovers.
 
-    prime_found = custom_is_prime(139, n)
+    prime_found = brute_f_check_for_prime_endpoint_sqrt_num(139, n)
     if type(prime_found) is int:
         return prime_found
-    print('prob primeprime')
+    print('number is determined to be prime')
     return -1
-    # print('prime found', prime_found)
-    # print('is digit', type(prime_found) is int)
-    # return
 
-    # prime_set = find_primes(first_set_half)
-    # print('prime set 1', prime_set)
-    # prime_set_basic = [2, 3, 5, 7, 11, 13, 17, 19]
-
-print(factorize1(25))
-
-# def divide_number(n):
-#     num_set = [n//]
-
-
+factorize1(10);
 
 def factorize2(n):
     knownPrimes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139]
-    prime_found = checkin_for_primes(n, knownPrimes)
+    prime_found = check_primality_in_known_set(n, knownPrimes)
     if type(prime_found) is int and prime_found != n:
         return prime_found
-    prime_found = custom_is_prime(141, n)
+    prime_found = brute_f_check_for_prime_endpoint_sqrt_num(141, n)
     if type(prime_found) is int and prime_found != n:
         return prime_found
-    print('prob prime')
+    print('number is determined to be prime')
     return -1
 # ...
 
-#def factorize3(n):
+def factorize3(n):
+    knownPrimes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139]
+    prime_found = check_primality_in_known_set(n, knownPrimes)
+    if type(prime_found) is int and prime_found != n:
+        return prime_found
+    prime_found = check_for_primality_descending(141, n)
+    if type(prime_found) is int and prime_found != n:
+        return prime_found
+    print('number is determined to be prime')
+    return -1
 # ...
 
 
@@ -169,6 +146,40 @@ def factorize2(n):
 
 # ...
 
+# Below are additional helper functions that I (Cat) have added to make my code more modular:
+
+def brute_f_check_for_prime_endpoint_sqrt_num(start, n):
+    end_range = int(n ** (1 / 2))
+    for i in range(start, end_range):
+        if n % i == 0:
+            return
+    return n
+
+def check_for_primality_descending(start, n):
+    end_range = int(n ** (1 / 2))
+    for i in range(start, end_range, -1):
+        if n % i == 0:
+            return
+    return n
+
+
+def check_primality_in_known_set(n, prime_set_basic):
+    for i in range(0, len(prime_set_basic)):
+        print('i in prime set', prime_set_basic[i])
+        if n % prime_set_basic[i] == 0:
+            return prime_set_basic[i]
+    else:
+        return 'now checking remaining set'
+
+def find_primes(start, end):
+    prime_list = list(range(start, end))
+    return list(filter(is_prime, prime_list))
+
+def is_prime(n):
+    for i in range(2, n):
+        if n % i == 0:
+            return
+    return n
 
 
 
@@ -181,7 +192,7 @@ if __name__ == '__main__':
     # First parse command line arguments and figure out which
     # function we want to test
     if len(sys.argv) <= 1:
-        fun = factorize2
+        fun = factorize
     else:
         fun_to_call_string = sys.argv[1]
         assert fun_to_call_string in globals(), ('You did not implement '+fun_to_call_string)
@@ -191,7 +202,7 @@ if __name__ == '__main__':
     f = open('composite_list.txt', 'r')
     # print_file = open('digit_list.txt', 'w')
     fun_file = fun.__name__ + '.txt'
-    print_file = open(fun_file, 'w')
+    log_file = open(fun_file, 'w')
     # test each number
     digits = {}
     # time = []
@@ -218,8 +229,7 @@ if __name__ == '__main__':
         print('length', length)
         print('seconds', seconds)
 
-        print_file.write("%s %f\n" % (length, seconds))
+        log_file.write("%s %f\n" % (length, seconds))
 
-    print_file.close()
-
+    log_file.close()
 
