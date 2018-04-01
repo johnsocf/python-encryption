@@ -76,6 +76,23 @@ def check_for_primality_descending(start, n):
             return
     return n
 
+def check_for_primality_ascending_eliminate_options(start, n, common_list):
+    end_range = int(n ** (1 / 2))
+    #new_list = map(minimize_list, range(start, end_range))
+    print('NEW LIST', new_list)
+    for i in new_list:
+        # return if it's a factor of a prime on the common primes list.
+        if n % i == 0:
+                 return
+    return n
+
+def minimize_list(i):
+    for j in common_list:
+        if i % j == 0:
+            return
+
+        return j
+
 def check_for_primality_descending_and_some(start, n, prime_factorial_set):
     end_range = int(n ** (1 / 2))
     num_list = list(filter(lambda x: x if x not in prime_factorial_set else None, range(start, end_range, -1)))
@@ -103,7 +120,15 @@ def check_for_primality_descending_only_non_factors(start, n, knownPrimes):
 
 def check_primality_in_known_set(n, prime_set_basic):
     for i in range(0, len(prime_set_basic)):
-        if n % prime_set_basic[i] == 0:
+        if n % int(prime_set_basic[i]) == 0:
+            return prime_set_basic[i]
+    else:
+        return 'now checking remaining set'
+
+def check_primality_in_common_set(n, prime_set_basic):
+    index = prime_set_basic.index('141')
+    for i in range(index, len(prime_set_basic)):
+        if n % int(prime_set_basic[i]) == 0:
             return prime_set_basic[i]
     else:
         return 'now checking remaining set'
@@ -116,7 +141,6 @@ def check_primality_in_known_set_and_some(n, prime_set_basic):
         #if i**2 < n:
             new_list_to_append = eulerTotient(prime_set_basic[i], n)
             new_list = new_list + new_list_to_append
-            print('new list', new_list)
     #else:
     log_file = open('common primes.txt', 'w')
     new_list.sort()
@@ -124,7 +148,7 @@ def check_primality_in_known_set_and_some(n, prime_set_basic):
     for item in new_list:
         if item not in newest_list:
             newest_list.append(item);
-    for newItem in [newest_list]:
+    for newItem in newest_list:
             log_file.write("%s\n" % newItem)
 
     log_file.close()
@@ -132,9 +156,9 @@ def check_primality_in_known_set_and_some(n, prime_set_basic):
 
 def eulerTotient(i, n):
     multiple_of_primes = []
-    j = 1
+    j = 2
     #while (j * i) < n:
-    while j < 11:
+    while j < 51:
         k = j * i
         multiple_of_primes.insert(0, k)
         j = j + 1
@@ -152,6 +176,19 @@ def is_prime(n):
         if n % i == 0:
             return
     return n
+
+def get_common_prime_list():
+    common_primes = []
+
+    with open('common primes.txt', 'r') as ins:
+        ins.readline()
+        for line in ins:
+            common_primes.append(line.rstrip('\n'))
+    return common_primes
+
+ # prime_found = check_primality_in_known_set_and_some(n, knownPrimes)
+    # print('prime found', prime_found)
+    # print('prime found', prime_found)
 
 # ---------------------
 
@@ -190,9 +227,10 @@ def factorize2(n):
 
 def factorize3(n):
     knownPrimes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139]
-    prime_found = check_primality_in_known_set(n, knownPrimes)
+
     if n in knownPrimes:
         return n
+    prime_found = check_primality_in_known_set(n, knownPrimes)
     if type(prime_found) is int and prime_found != n:
         return prime_found
     prime_found = check_for_primality_descending(141, n)
@@ -204,20 +242,25 @@ def factorize3(n):
 # ...
 
 
+
 def factorize4(n):
     # also remove multiples of primes from set.
     knownPrimes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101,
                    103, 107, 109, 113, 127, 131, 137, 139];
     if n in knownPrimes:
         return n
-    prime_found = check_primality_in_known_set_and_some(n, knownPrimes)
-    print('prime found', prime_found)
-    print('prime found', prime_found)
+
+    common_primes = get_common_prime_list()
+    if n in common_primes:
+        return n
+    prime_found = check_for_primality_ascending_eliminate_options(141, n, knownPrimes)
+    if type(prime_found) is int and prime_found != n:
+        return prime_found + 'PRIME '
+    print('number is determined to be prime')
 
     return -1
 # ...
-
-factorize4(260573);
+factorize4(191);
 
 # ...
 
@@ -231,7 +274,7 @@ if __name__ == '__main__':
     # First parse command line arguments and figure out which
     # function we want to test
     if len(sys.argv) <= 1:
-        fun = factorize1
+        fun = factorize
     else:
         fun_to_call_string = sys.argv[1]
         assert fun_to_call_string in globals(), ('You did not implement '+fun_to_call_string)
