@@ -59,6 +59,7 @@ def factorize(n):
 
 # ------------------
 
+
 # Below are additional helper functions that I (Cat) have added to make my code more modular:
 
 def brute_f_check_for_prime_endpoint_sqrt_num(start, n):
@@ -75,14 +76,72 @@ def check_for_primality_descending(start, n):
             return
     return n
 
+def check_for_primality_descending_and_some(start, n, prime_factorial_set):
+    end_range = int(n ** (1 / 2))
+    num_list = list(filter(lambda x: x if x not in prime_factorial_set else None, range(start, end_range, -1)))
+    for i in num_list:
+        if n % i == 0:
+            return
+    return n
+
+def check_for_primality_descending_only_non_factors(start, n, knownPrimes):
+    end_range = int(n ** (1 / 2));
+    for i in range(start, end_range, -1):
+
+        if n % i == 0:
+            return
+    return n
+
+def check_for_primality_descending_only_non_factors(start, n, knownPrimes):
+    end_range = int(n ** (1 / 2));
+    #list_without_prime_factors = filter( lambda x: ,range(start, end_range, -1));
+    for i in range(start, end_range, -1):
+
+        if n % i == 0:
+            return
+    return n
 
 def check_primality_in_known_set(n, prime_set_basic):
     for i in range(0, len(prime_set_basic)):
-        print('i in prime set', prime_set_basic[i])
         if n % prime_set_basic[i] == 0:
             return prime_set_basic[i]
     else:
         return 'now checking remaining set'
+
+def check_primality_in_known_set_and_some(n, prime_set_basic):
+    new_list = []
+    for i in range(0, len(prime_set_basic)):
+        # if n % prime_set_basic[i] == 0 and n != prime_set_basic[i]:
+        #     return prime_set_basic[i]
+        #if i**2 < n:
+            new_list_to_append = eulerTotient(prime_set_basic[i], n)
+            new_list = new_list + new_list_to_append
+            print('new list', new_list)
+    #else:
+    log_file = open('common primes.txt', 'w')
+    new_list.sort()
+    newest_list = []
+    for item in new_list:
+        if item not in newest_list:
+            newest_list.append(item);
+    for newItem in [newest_list]:
+            log_file.write("%s\n" % newItem)
+
+    log_file.close()
+    return new_list
+
+def eulerTotient(i, n):
+    multiple_of_primes = []
+    j = 1
+    #while (j * i) < n:
+    while j < 11:
+        k = j * i
+        multiple_of_primes.insert(0, k)
+        j = j + 1
+    return multiple_of_primes
+
+# sort list first so that higher than list number primes aren't checked.
+
 
 def find_primes(start, end):
     prime_list = list(range(start, end))
@@ -108,16 +167,17 @@ def factorize1(n):
         if (type(prime_found) is int and prime_found != n):
             return prime_found
 
-    prime_found = brute_f_check_for_prime_endpoint_sqrt_num(139, n)
-    if type(prime_found) is int:
+    prime_found = brute_f_check_for_prime_endpoint_sqrt_num(141, n)
+    if (type(prime_found) is int and prime_found != n):
         return prime_found
     print('number is determined to be prime')
     return -1
 
-factorize1(10);
 
 def factorize2(n):
     knownPrimes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139]
+    if n in knownPrimes:
+        return n
     prime_found = check_primality_in_known_set(n, knownPrimes)
     if type(prime_found) is int and prime_found != n:
         return prime_found
@@ -131,56 +191,35 @@ def factorize2(n):
 def factorize3(n):
     knownPrimes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139]
     prime_found = check_primality_in_known_set(n, knownPrimes)
+    if n in knownPrimes:
+        return n
     if type(prime_found) is int and prime_found != n:
         return prime_found
     prime_found = check_for_primality_descending(141, n)
     if type(prime_found) is int and prime_found != n:
         return prime_found
     print('number is determined to be prime')
+
     return -1
 # ...
 
 
-#def factorize4(n):
+def factorize4(n):
+    # also remove multiples of primes from set.
+    knownPrimes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101,
+                   103, 107, 109, 113, 127, 131, 137, 139];
+    if n in knownPrimes:
+        return n
+    prime_found = check_primality_in_known_set_and_some(n, knownPrimes)
+    print('prime found', prime_found)
+    print('prime found', prime_found)
+
+    return -1
 # ...
 
+factorize4(260573);
+
 # ...
-
-# Below are additional helper functions that I (Cat) have added to make my code more modular:
-
-def brute_f_check_for_prime_endpoint_sqrt_num(start, n):
-    end_range = int(n ** (1 / 2))
-    for i in range(start, end_range):
-        if n % i == 0:
-            return
-    return n
-
-def check_for_primality_descending(start, n):
-    end_range = int(n ** (1 / 2))
-    for i in range(start, end_range, -1):
-        if n % i == 0:
-            return
-    return n
-
-
-def check_primality_in_known_set(n, prime_set_basic):
-    for i in range(0, len(prime_set_basic)):
-        print('i in prime set', prime_set_basic[i])
-        if n % prime_set_basic[i] == 0:
-            return prime_set_basic[i]
-    else:
-        return 'now checking remaining set'
-
-def find_primes(start, end):
-    prime_list = list(range(start, end))
-    return list(filter(is_prime, prime_list))
-
-def is_prime(n):
-    for i in range(2, n):
-        if n % i == 0:
-            return
-    return n
-
 
 
 # Below we have test code:
@@ -192,7 +231,7 @@ if __name__ == '__main__':
     # First parse command line arguments and figure out which
     # function we want to test
     if len(sys.argv) <= 1:
-        fun = factorize
+        fun = factorize1
     else:
         fun_to_call_string = sys.argv[1]
         assert fun_to_call_string in globals(), ('You did not implement '+fun_to_call_string)
