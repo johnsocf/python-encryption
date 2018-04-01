@@ -34,11 +34,12 @@ from time import clock as time_clock
 # running time for the factorize
 # function.
 
-# -------------------------------------------
 import math
 # Math is being imported to take the square root of n
 # to set a largest possible endpoint to a prime
 #factor of n
+
+# -------------------------------------------
 
 
 # This is the brute force algorithm.
