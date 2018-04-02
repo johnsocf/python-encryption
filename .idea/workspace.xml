@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="351f2317-d103-48d2-90ef-cb0129a8c781" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/factorize2.txt" afterPath="$PROJECT_DIR$/factorize2.txt" />
-      <change beforePath="$PROJECT_DIR$/factorize3.txt" afterPath="$PROJECT_DIR$/factorize3.txt" />
+      <change beforePath="$PROJECT_DIR$/factorize4.txt" afterPath="$PROJECT_DIR$/factorize4.txt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -83,7 +82,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="composite_list.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="composite_list.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/composite_list.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="144">
@@ -113,7 +112,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="factorize4.txt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="factorize4.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/factorize4.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
@@ -134,7 +133,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>primality_ascending_eliminate_options_filter</find>
       <find>descending_elim</find>
       <find>factorize6</find>
       <find>heck_for_primality_descending_eliminate_options_simple_filter</find>
@@ -164,6 +162,7 @@
       <find>3369519024464869</find>
       <find>3412403956823773</find>
       <find>factorize1</find>
+      <find>867115207909033</find>
     </findStrings>
     <replaceStrings>
       <replace>check_primality_in_known_set</replace>
@@ -706,14 +705,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/factorize4.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/factorize3.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -734,6 +725,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="844" column="15" lean-forward="false" selection-start-line="844" selection-start-column="0" selection-end-line="844" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/factorize4.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
