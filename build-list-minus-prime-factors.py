@@ -117,7 +117,7 @@ def factorize9(n):
                 count_deep = {j: count[j] for j in count if j != i}
                 test_count = 2
                 while test_count > 0:
-                    multiplicative_factor = int(prime_associated) * test_count
+                    multiplicative_factor = i + int(prime_associated) * test_count
                     test_count = test_count + 1
                     if (count_deep.get(i + multiplicative_factor, 'empty')):
                         count_deep[i + multiplicative_factor] = prime_associated
