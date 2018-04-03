@@ -115,25 +115,28 @@ def factorize9(n):
                 # count_deep[i + prime_associated] = count_deep.pop(i)
 
                 count_deep = {j: count[j] for j in count if j != i}
-                test_count = 2
+                test_count = 1
                 while test_count > 0:
-                    multiplicative_factor = i + int(prime_associated) * test_count
+                    multiplicative_factor = i + (int(prime_associated) * test_count)
                     test_count = test_count + 1
-                    if (count_deep.get(i + multiplicative_factor, 'empty')):
-                        count_deep[i + multiplicative_factor] = prime_associated
+                    if multiplicative_factor not in count_deep:
+                    # if (count_deep.get(multiplicative_factor, 'empty')):
+                        count_deep[multiplicative_factor] = prime_associated
                         test_count = 0
+                        condition = False;
+                        break
+                if (not condition):
+                    continue
 
                 i = i + 1
-                condition = False
+                # condition = False
 
         count = count_deep
-        if (not condition):
-            continue
-        log_file.write("%s\n" % i)
-        print('i prime', i)
-        new_key = (i + i)
-        count_deep[new_key] = i
-        count = count_deep
+        if (condition):
+            log_file.write("%s\n" % i)
+            print('i prime', i)
+            new_key = (i + i)
+            count[new_key] = i
 
         # shorten range, already counted some... can just divide by known primes by now.
         # refactor that part
