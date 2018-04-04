@@ -111,8 +111,6 @@ def factorize9(n):
                 prime_associated = int(count_deep[i])
                 count_deep = {}
 
-                # delattr(count, string_i)
-                # count_deep[i + prime_associated] = count_deep.pop(i)
 
                 count_deep = {j: count[j] for j in count if j != i}
                 test_count = 1
@@ -120,7 +118,6 @@ def factorize9(n):
                     multiplicative_factor = i + (int(prime_associated) * test_count)
                     test_count = test_count + 1
                     if multiplicative_factor not in count_deep:
-                    # if (count_deep.get(multiplicative_factor, 'empty')):
                         count_deep[multiplicative_factor] = prime_associated
                         test_count = 0
                         condition = False;
@@ -129,38 +126,13 @@ def factorize9(n):
                     continue
 
                 i = i + 1
-                # condition = False
 
         count = count_deep
         if (condition):
             log_file.write("%s\n" % i)
-            print('i prime', i)
+            # print('i prime', i)
             new_key = (i + i)
             count[new_key] = i
-
-        # shorten range, already counted some... can just divide by known primes by now.
-        # refactor that part
-            ## seems a bit of, missing 5.
-        # for k in range(prime_count, i - 1):
-        #     print('k', k);
-        #     print('i', i)
-        #     if i % k == 0:
-        #         if i is n:
-        #             return -1
-        #         print('prime', i)
-        #         new_key = i + i
-        #         count[new_key] = i
-        #         prime_count = i
-        #         condition = False
-        #         break
-
-        # if (not condition):
-        #     continue
-        # if n % i == 0:
-        #     print('i has a prime factor')
-        #     return i
-        # actual_numbers_worth_testing_numbers.append(i);
-
 
         i = i + 1
 
