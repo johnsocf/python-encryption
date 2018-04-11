@@ -93,26 +93,35 @@ import copy
 
 
 def factorize9(n):
+    # initialize variables and flags.
+    # start count with two as a prime and a bump up in it's multiple to the next.
     count = {4: 2}
-    prime_count = 1;
     i = 3;
-    primes = []
-    actual_numbers_worth_testing_numbers = []
-    condition = True
-    print('test')
-    log_file = open('list_of_primes.txt', 'w')
+    log_file = open('list_of_primes_two.txt', 'w')
 
+    # set loop to run untill we reach n
     while i <= n:
+
+        # set local variables.  deep copy count dict for immutability
         condition = True
         count_deep = copy.deepcopy(count)
 
         for j in count:
+            # see if this iteration exists as key in loop
             if i == j:
+                # find prime associated with this iteration of the loop
                 prime_associated = int(count_deep[i])
+                # reset our building dict
                 count_deep = {}
 
 
+                # rebuild the count dict based on count data clone a deep copy
                 count_deep = {j: count[j] for j in count if j != i}
+
+                # set sub count to accommodate numbers which have common primes as multiples.
+                # we find the next 'bump' of the multiplicative factor of the prime number that is
+                # in the series, and if it's not already in our dict object we leave it.  if it is we use the
+                # counter to keep track of the multiples and find one that's not yet in our object
                 test_count = 1
                 while test_count > 0:
                     multiplicative_factor = i + (int(prime_associated) * test_count)
@@ -122,11 +131,15 @@ def factorize9(n):
                         test_count = 0
                         condition = False;
                         break
+                # a condition flag allows us to break out of the main iteration and move to the next if we have
+                # found i to be a known multiple of a prime tested as a possible factor
                 if (not condition):
                     continue
-
                 i = i + 1
 
+        # reassign the rebuilt count object as the count dict
+        # by inverse association anything that's not a known multiple of an existing prime is in and
+        # of itself prime
         count = count_deep
         if (condition):
             log_file.write("%s\n" % i)
@@ -134,10 +147,13 @@ def factorize9(n):
             new_key = (i + i)
             count[new_key] = i
 
+        # we iteration one by one to keep precise track of all the known primes and their multiples to find new
+        # primes by the inverse, i.e. what is not a multiple.
         i = i + 1
 
     log_file.close()
     print('false')
+    # if no factor is yet found then we know that n is prime.
     return -1
 
 
