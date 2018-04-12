@@ -421,7 +421,7 @@ if __name__ == '__main__':
     # First parse command line arguments and figure out which
     # function we want to test
     if len(sys.argv) <= 1:
-        fun = factorize8
+        fun = factorize7
     else:
         fun_to_call_string = sys.argv[1]
         assert fun_to_call_string in globals(), ('You did not implement '+fun_to_call_string)
@@ -453,7 +453,7 @@ if __name__ == '__main__':
             print('Factorization failed for: ', n)
             sys.exit(1)
         # if time elapsed is greater than 5 - print and exit
-        if (n == 72246449675467591861):
+        if (n == 994351439828818801):
             f.close()
             print('digits', digits);
             for length, seconds in digits.items():

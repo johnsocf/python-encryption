@@ -147,7 +147,6 @@ def test_for_digits(n, start):
     if (end_range**2 == n):
         return end_range
     while i < end_range + 1:
-        find_acceptable_last_digit = False
         if n % i == 0:
             print('brute force prime factor is', i)
             return i
@@ -158,6 +157,9 @@ def test_for_digits(n, start):
                     i = i + 1
                 pattern_set_to_odds = True
             i = i + 2
+        # lets get i into a format where it's last digit is 1, 3, 7, or 9.
+        # we know all primes above three fit this bill
+        # let's skip up by two untill the next in the series does this.
         count = 2
         while count > 0:
             sum = i + count
@@ -182,6 +184,10 @@ def test_for_six_num_theory(n, start):
     for j in range(2, 3+1):
         if n % j == 0:
             return j
+    # we know from number theory that primes lie in the series where i
+    # increases by one and these equations show
+    # test 1 and test 2 to be prime
+    # if they're not dividing n, maybe nothing is and perhaps it's prime
     while ((6 * i) + 1) < n:
         test1 = (6 * i) - 1
         test2 = (6 * i) + 1
@@ -384,12 +390,18 @@ def factorize8(n):
     return -1
 
 def factorize9(n):
+    #check to see if a few known primes are divisors of n.
+    # if so return the prime found to divide n
     primes = [3, 5, 7, 11, 13, 17]
     prime_found = check_primality_in_known_set(n, primes)
     if type(prime_found) is int and prime_found != n:
         print('factor', prime_found)
         return prime_found
     end_range = int(math.floor(math.sqrt(n))) + 1
+    # build array based i and divisibility by primes.
+    # look at inverse and if these are not divisible by known primes
+    # than they can be assumed to be perhaps prime factors of n
+    # test to see if n is divisible by i from this subset
     a = [17 % p for p in primes]
     for i in range(19, end_range):
         for j in range(len(primes)):

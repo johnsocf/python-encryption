@@ -3,16 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="351f2317-d103-48d2-90ef-cb0129a8c781" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/build-list-minus-prime-factors.py" afterPath="$PROJECT_DIR$/build-list-minus-prime-factors.py" />
-      <change beforePath="$PROJECT_DIR$/complexity_analysis_functions.py" afterPath="$PROJECT_DIR$/complexity_analysis_functions.py" />
-      <change beforePath="$PROJECT_DIR$/factorize.txt" afterPath="$PROJECT_DIR$/list_of_ptimes_two" />
-      <change beforePath="$PROJECT_DIR$/factorize1.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/factorize1.txt" afterPath="$PROJECT_DIR$/newest_n_greatest.py" />
-      <change beforePath="$PROJECT_DIR$/factorize2.txt" afterPath="$PROJECT_DIR$/factorize2.txt" />
-      <change beforePath="$PROJECT_DIR$/factorize7.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/factorize8.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/factorize9.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/factorize8.txt" afterPath="$PROJECT_DIR$/factorize8.txt" />
       <change beforePath="$PROJECT_DIR$/factorize_main.py" afterPath="$PROJECT_DIR$/factorize_main.py" />
+      <change beforePath="$PROJECT_DIR$/newest_n_greatest.py" afterPath="$PROJECT_DIR$/newest_n_greatest.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,36 +15,16 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/programming_project_kit$factorize_main.coverage" NAME="factorize_main Coverage Results" MODIFIED="1523405668354" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/programming_project_kit$factorize_main.coverage" NAME="factorize_main Coverage Results" MODIFIED="1523490843832" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/programming_project_kit$build_list_minus_prime_factors.coverage" NAME="build-list-minus-prime-factors Coverage Results" MODIFIED="1523290704640" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="factorize_main.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="factorize_main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/factorize_main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="385" column="18" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="475" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="newest_n_greatest.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/newest_n_greatest.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="439">
-              <caret line="475" column="0" lean-forward="true" selection-start-line="475" selection-start-column="0" selection-end-line="475" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="factorize6.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/factorize6.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="1667">
+              <caret line="455" column="35" lean-forward="false" selection-start-line="455" selection-start-column="17" selection-end-line="455" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -67,8 +40,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="factorize7.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/factorize7.txt">
+      <file leaf-file-name="factorize9.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/factorize9.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -77,8 +50,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="factorize4.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/factorize4.txt">
+      <file leaf-file-name="factorize6.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/factorize6.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -87,21 +60,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="factorize3.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/factorize3.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="factorize2.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/factorize2.txt">
+      <file leaf-file-name="factorize8.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/factorize8.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -110,8 +73,8 @@
       <file leaf-file-name="composite_list.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/composite_list.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="2450" column="0" lean-forward="false" selection-start-line="2450" selection-start-column="0" selection-end-line="2450" selection-end-column="20" />
+            <state relative-caret-position="103">
+              <caret line="1771" column="18" lean-forward="false" selection-start-line="1771" selection-start-column="0" selection-end-line="1771" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -120,8 +83,8 @@
       <file leaf-file-name="complexity_analysis_functions.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/complexity_analysis_functions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="36" column="1" lean-forward="true" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
+            <state relative-caret-position="238">
+              <caret line="35" column="20" lean-forward="true" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -138,24 +101,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>test_for_prime_brute</find>
-      <find>name</find>
-      <find>factori</find>
-      <find>brute_f_check_for_prime_endpoint_sqrt_num</find>
-      <find>3369519024464869</find>
-      <find>3412403956823773</find>
-      <find>867115207909033</find>
-      <find>factorize1</find>
-      <find>3341672718683209</find>
-      <find>write</find>
-      <find>: 2,</find>
-      <find>: 5,</find>
-      <find>:</find>
-      <find>prime_associated</find>
-      <find>deep</find>
-      <find>481751</find>
-      <find>primes</find>
-      <find>actual_numbers</find>
       <find>prime_count</find>
       <find>count_deep</find>
       <find>copy</find>
@@ -167,7 +112,25 @@
       <find>check</find>
       <find>test_for</find>
       <find>test_for_six_n</find>
+      <find>six_num</find>
+      <find>3137752909044318133</find>
+      <find>4312525120581668509</find>
+      <find>72246449675467591861</find>
+      <find>2974837220756357053</find>
+      <find>3667714580536990057</find>
+      <find>63967176993229</find>
+      <find>206118329905753</find>
+      <find>3233090805227935801</find>
+      <find>3463148685722511001</find>
       <find>test_for_six</find>
+      <find>3506472841928591233</find>
+      <find>factorize9</find>
+      <find>3599264823023397109</find>
+      <find>3576461063284524277</find>
+      <find>checkp</find>
+      <find>720643630224518941</find>
+      <find>747930006041447461</find>
+      <find>994351439828818801</find>
     </findStrings>
     <replaceStrings>
       <replace>check_primality_in_known_set</replace>
@@ -196,8 +159,8 @@
         <option value="$PROJECT_DIR$/list_of_primes_two.txt" />
         <option value="$PROJECT_DIR$/factorize3.txt" />
         <option value="$PROJECT_DIR$/complexity_analysis_functions.py" />
-        <option value="$PROJECT_DIR$/factorize_main.py" />
         <option value="$PROJECT_DIR$/newest_n_greatest.py" />
+        <option value="$PROJECT_DIR$/factorize_main.py" />
       </list>
     </option>
   </component>
@@ -208,10 +171,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="11" />
-    <option name="y" value="115" />
-    <option name="width" value="1440" />
-    <option name="height" value="809" />
+    <option name="x" value="26" />
+    <option name="y" value="164" />
+    <option name="width" value="1390" />
+    <option name="height" value="702" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -248,7 +211,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -261,6 +223,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -354,16 +317,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="11" y="115" width="1440" height="809" extended-state="0" />
+    <frame x="26" y="164" width="1390" height="702" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32825485" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27731094" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16144976" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32963988" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32825485" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35811836" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13805436" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1454006" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -698,25 +661,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/factorize9.txt" />
     <entry file="file://$PROJECT_DIR$/factorize1.txt" />
     <entry file="file://$PROJECT_DIR$/factorize.txt" />
-    <entry file="file://$PROJECT_DIR$/factorize8.txt" />
     <entry file="file://$PROJECT_DIR$/build-list-minus-prime-factors.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1395">
           <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
           <folding>
-            <element signature="e#150#187#0" expanded="true" />
+            <element signature="e#150#187#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/complexity_analysis_functions.py">
+    <entry file="file://$PROJECT_DIR$/newest_n_greatest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="36" column="1" lean-forward="true" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
-          <folding />
+        <state relative-caret-position="-607">
+          <caret line="382" column="13" lean-forward="true" selection-start-line="382" selection-start-column="13" selection-end-line="382" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -724,23 +684,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/factorize6.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composite_list.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="2450" column="0" lean-forward="false" selection-start-line="2450" selection-start-column="0" selection-end-line="2450" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -748,11 +691,56 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/factorize4.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/factorize7.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/factorize9.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/factorize8.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/complexity_analysis_functions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="35" column="20" lean-forward="true" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composite_list.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="1771" column="18" lean-forward="false" selection-start-line="1771" selection-start-column="0" selection-end-line="1771" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/factorize6.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -768,26 +756,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/factorize7.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/factorize_main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="385" column="18" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="475" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/newest_n_greatest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="475" column="0" lean-forward="true" selection-start-line="475" selection-start-column="0" selection-end-line="475" selection-end-column="0" />
+        <state relative-caret-position="1667">
+          <caret line="455" column="35" lean-forward="false" selection-start-line="455" selection-start-column="17" selection-end-line="455" selection-end-column="35" />
           <folding />
         </state>
       </provider>
